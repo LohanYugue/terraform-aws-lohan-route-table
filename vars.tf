@@ -1,7 +1,6 @@
 variable "name" {
   type        = string
   description = "Route table name"
-  default     = "route-table-test"
 }
 
 variable "environment" {
@@ -19,7 +18,6 @@ variable "region" {
 variable "vpc_id" {
   type        = string
   description = "VPC id"
-  default     = "vpc-0cce53c5f326eed01"
 }
 
 variable "cidr_block" {
@@ -31,7 +29,7 @@ variable "cidr_block" {
 variable "internet_gateway" {
   type        = string
   description = "Internet Gateway ID, ex: igw-0fe275f1088695b67"
-  default     = "igw-0fe275f1088695b67"
+  default     = null
 }
 
 variable "nat_gateway" {
@@ -43,14 +41,11 @@ variable "nat_gateway" {
 variable "subnet_ids" {
   type        = list(string)
   description = "List of subnets to associate on route table"
-  default     = [ "subnet-0d1af962326632171", "subnet-07eebb474ea948b0a" ]
+  default     = []
 }
 
 variable "additional_tags" {
   type        = map(string)
   description = "Additional Tags, reserved tags: Name & Environment"
-  default     = {
-    teste = "teste",
-    teste2 = "teste2"
-  }
+  default     = {}
 }
